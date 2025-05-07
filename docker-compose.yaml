@@ -1,0 +1,18 @@
+services:
+  aerospike:
+    image: aerospike/aerospike-server:latest
+    container_name: aerospike
+    ports:
+      - 3000:3000
+      - 3001:3001
+      - 3002:3002
+    volumes:
+      - aerospike_data:/opt/aerospike/data
+      - aerospike_conf:/etc/aerospike
+    environment:
+      - NAMESPACE=test
+    command: ["asd", "--config-file", "/etc/aerospike/aerospike.conf"]
+
+volumes:
+  aerospike_data:
+  aerospike_conf:

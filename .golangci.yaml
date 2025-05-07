@@ -1,0 +1,21 @@
+run:
+  timeout: 5s
+
+linters-settings:
+  lll:
+    line-length: 180
+  nlreturn:
+    block-size: 3
+  funlen:
+    lines: 100
+
+linters:
+  enable-all: true
+  disable:
+    - wsl
+    - depguard
+    - gci
+    - varnamelen
+    - exhaustruct
+    - errcheck
+    - dupl

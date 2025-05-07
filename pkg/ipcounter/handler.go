@@ -15,7 +15,7 @@ type FileHandler struct {
 func (h *FileHandler) OpenRead(name string) (io.ReadCloser, error) {
 	f, err := h.FS.Open(name)
 	if err != nil {
-		return nil, err
+		return nil, ErrReadInputFile
 	}
 
 	return f, nil
